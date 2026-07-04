@@ -577,22 +577,25 @@
 
   <script>
     // Auto-play background shenai music after page loads
-    window.addEventListener('load', function() {
-      const audio = document.getElementById('bgAudio');
-      if (audio) {
-        audio.volume = 0.3; // Set volume to 30%
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(function(error) {
-            // Auto-play was prevented, allow user interaction to play
-            document.addEventListener('click', function() {
-              audio.play().catch(e => console.log('Audio play failed:', e));
-            }, { once: true });
-          });
-        }
-      }
-    });
+  window.addEventListener("load", () => {
+  const splash = document.querySelector(".splash-screen");
+  const audio = document.getElementById("bgAudio");
 
+  audio.volume = 0.5;
+
+  splash.addEventListener("animationend", () => {
+    audio.play().catch(() => {
+      const startMusic = () => {
+        audio.play();
+        document.removeEventListener("click", startMusic);
+        document.removeEventListener("touchstart", startMusic);
+      };
+
+      document.addEventListener("click", startMusic);
+      document.addEventListener("touchstart", startMusic);
+    });
+  });
+});
     // Load custom fonts after page render for better performance
     if (document.fonts) {
       Promise.all([
