@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griha Pravesh Ceremony — You're Invited</title>
+
+<!-- Preconnect to Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap');
+
+  /* Local Custom Fonts */
+  @font-face {
+    font-family: 'Saroj';
+    src: url('fonts/Saroj-0n2v.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Saroj';
+    src: url('fonts/SarojBold-elxe.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Saroj';
+    src: url('fonts/SarojItalic-E0Kr.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Chintaron';
+    src: url('fonts/ChintaronRegular-MAzen.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Theganesha';
+    src: url('fonts/Theganesha-V5OB.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  :root{
+    --cream:#f6f0e2;
+    --gold:#c98a2b;
+    --gold-deep:#a9711a;
+    --red:#c8102e;
+    --text:#5b4326;
+    --marathi-orange:#d4621c;
+    --marathi-saffron:#ff9933;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{
+    font-size: clamp(14px, 2vw, 18px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Curtain Veil Intro Animation */
+  @keyframes fadeInContent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOutSplash {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    70% {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes scaleInSplash {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Marathi Culture Loading Screen - Complete Redesign */
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 50% 0%, #f8f3e6 0%, #ecdfc4 55%, #ddccA3 100%);
+    background-image: 
+      url('images.png'),
+      radial-gradient(circle at 50% 0%, #f8f3e6 0%, #ecdfc4 55%, #ddccA3 100%);
+    background-size: 
+      clamp(200px, 40vw, 500px),
+      cover;
+    background-position: 
+      center 20%,
+      center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeOutSplash 3.5s ease-out forwards;
+    overflow: hidden;
+    pointer-events: auto;
+  }
+
+  /* Decorative corners for splash screen */
+  .splash-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(255, 153, 51, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(201, 138, 43, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(212, 98, 28, 0.05) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .splash-content {
+    text-align: center;
+    animation: scaleInSplash 2.5s ease-out;
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0);
+    padding: clamp(40px, 10vw, 80px);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(201, 138, 43, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+  }
+
+  .splash-om {
+    font-size: clamp(50px, 12vw, 100px);
+    color: #c98a2b;
+    font-family: Georgia, Arial, sans-serif;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .splash-title {
+    font-family: Georgia, Arial, sans-serif;
+    font-size: clamp(22px, 5vw, 44px);
+    color: #5b4326;
+    margin: 15px 0 0 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .splash-subtitle {
+    font-family: Georgia, Arial, sans-serif;
+    font-size: clamp(13px, 2.5vw, 20px);
+    color: #1e1e1d;
+    margin: 12px 0 0 0;
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .splash-decorations {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 18px;
+    font-size: clamp(16px, 4vw, 28px);
+    opacity: 0.7;
+  }
+
+  .splash-line {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c98a2b, transparent);
+    margin-top: 15px;
+    border-radius: 1px;
+  }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 50% 0%, #f8f3e6 0%, #ecdfc4 55%, #ddccA3 100%);
+    font-family: Georgia, Arial, serif;
+    padding: clamp(20px, 5vw, 60px) clamp(12px, 4vw, 24px);
+    animation: fadeInContent 1.5s ease-out;
+    position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Marathi & Hindu Cultural Background Pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 153, 51, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(201, 138, 43, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(200, 16, 46, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -8%;
+    right: -8%;
+    width: 400px;
+    height: 400px;
+    background: url('vecteezy_creative-kalash-illustration_11810760.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .decorative-top-left {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: url('vecteezy_ai-generated-diwali-candle-set-isolated-on-transparent_35681382.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .cultural-header {
+    text-align: center;
+    margin-bottom: clamp(16px, 3vw, 28px);
+  }
+
+  .marathi-title {
+    font-family: Georgia, Arial, sans-serif;
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 700;
+    color: var(--marathi-saffron);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+
+  .cultural-border {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--marathi-orange) 20%, var(--marathi-orange) 80%, transparent);
+    margin: 8px auto;
+    border-radius: 2px;
+  }
+
+  .card-wrap{
+    position:relative;
+    max-width:451px;
+    width:100%;
+  }
+
+  .card-wrap {
+    border: 3px solid var(--gold-deep);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 0 8px rgba(201, 138, 43, 0.1);
+    position: relative;
+  }
+
+  .card-wrap::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    width: 180px;
+    height: 180px;
+    background: url('vecteezy_ai-generated-diwali-candle-set-isolated-on-transparent_35681382.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .card-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    right: -35px;
+    width: 150px;
+    height: 150px;
+    background: url('vecteezy_creative-kalash-illustration_11810760.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .card-wrap img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:4px;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,0.10),
+      0 30px 70px rgba(70,45,10,0.30);
+  }
+
+  .audio-player {
+    display: none;
+  }
+
+  .audio-label {
+    display: none;
+  }
+
+  audio {
+    display: none;
+  }
+
+  .actions{
+    max-width:451px;
+    width:100%;
+    display:flex;
+    gap:clamp(8px, 3vw, 16px);
+    margin-top:clamp(16px, 4vw, 32px);
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .btn{
+    flex:1 1 clamp(140px, 45%, 200px);
+    text-align:center;
+    padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 22px);
+    border-radius:2px;
+    border:1.4px solid var(--gold-deep);
+    font-family: Georgia, Arial, serif;
+    font-size: clamp(11px, 2vw, 14px);
+    letter-spacing:0.6px;
+    text-transform:uppercase;
+    text-decoration:none;
+    cursor:pointer;
+    transition: all 0.2s ease;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .btn-primary{
+    background: var(--gold-deep);
+    color: #fffdf6;
+  }
+  .btn-primary:hover{
+    background:#8a5b13;
+    border-color:#8a5b13;
+    transform: scale(1.02);
+  }
+  .btn-primary:active{
+    transform: scale(0.98);
+  }
+
+  .btn-secondary{
+    background: transparent;
+    color: var(--gold-deep);
+  }
+  .btn-secondary:hover{
+    background: rgba(169,113,26,0.08);
+    transform: scale(1.02);
+  }
+  .btn-secondary:active{
+    transform: scale(0.98);
+  }
+
+  .footnote{
+    margin-top: clamp(14px, 3vw, 28px);
+    font-family: Georgia, 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--text);
+    font-size: clamp(12px, 1.8vw, 16px);
+    text-align:center;
+    opacity:0.8;
+    max-width:451px;
+    padding: 0 clamp(12px, 4vw, 24px);
+    font-weight: 500;
+    font-feature-settings: "kern" 1;
+    line-height: 1.6;
+  }
+
+  .marathi-footer {
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    font-size: clamp(11px, 1.8vw, 14px);
+    color: var(--marathi-orange);
+    margin-top: clamp(10px, 2vw, 16px);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-feature-settings: "kern" 1;
+    line-height: 1.6;
+  }
+
+  /* Tablet (480px to 768px) */
+  @media (max-width:768px){
+    .actions{
+      flex-direction:column;
+    }
+    .btn{
+      flex:1 1 100%;
+    }
+  }
+
+  /* Small Phones (up to 480px) */
+  @media (max-width:480px){
+    .actions{
+      flex-direction:column;
+    }
+    .btn{
+      flex:1 1 100%;
+    }
+  }
+
+  /* Large Screens (769px and up) */
+  @media (min-width:769px){
+    body{
+      justify-content:center;
+    }
+  }
+
+  /* Extra Large Screens (1200px and up) */
+  @media (min-width:1200px){
+    .card-wrap{
+      max-width:500px;
+    }
+  }
+
+  .decorative-top-left {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: url('vecteezy_ai-generated-diwali-candle-set-isolated-on-transparent_35681382.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Audio Player Styling */
+  audio {
+    max-width: 451px;
+    width: 100%;
+    margin-top: 24px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(255,153,51,0.1) 0%, rgba(201,138,43,0.1) 100%);
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  audio::-webkit-media-controls-panel {
+    background: linear-gradient(135deg, rgba(255,153,51,0.15) 0%, rgba(201,138,43,0.15) 100%);
+    border-radius: 6px;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    color: var(--gold-deep);
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    accent-color: var(--gold-deep);
+  }
+
+  audio::-moz-range-thumb {
+    background: var(--gold-deep);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Decorative Background Elements -->
+  <div class="decorative-top-left"></div>
+
+  <!-- Marathi Culture Loading Screen -->
+  <div class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-om">ॐ</div>
+      <h1 class="splash-title"></h1>
+      <p class="splash-subtitle">Shree Ganeshay Namaha</p>
+      <div class="splash-decorations">
+        <span>✦</span>
+        <span>गृहप्रवेश</span>
+        <span>✦</span>
+      </div>
+      <div class="splash-line"></div>
+    </div>
+  </div>
+
+  <!-- Cultural Header -->
+  <div class="cultural-header">
+    <div class="marathi-title">गृहप्रवेश</div>
+    <div class="cultural-border"></div>
+  </div>
+
+  <div class="card-wrap">
+    <img src="assets/invitation.jpeg" alt="Griha Pravesh Ceremony invitation — 6th July 2026, 12:00 AM onwards, at 1002-Vrindavan Gardens, Malviya Nagar, Khamla, Nagpur. Hosted by Sangeeta and Vivek Talmaley.">
+  </div>
+
+  <!-- Shenai Audio - Autoplay in Background -->
+  <audio id="bgAudio" preload="auto" autoplay loop style="max-width: 451px; width: 100%; margin-top: 24px; height: 50px; border-radius: 8px; background: linear-gradient(135deg, rgba(255,153,51,0.1) 0%, rgba(201,138,43,0.1) 100%); border: 2px solid var(--gold); cursor: pointer;">
+    <source src="assets/shenai-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="actions">
+    <a class="btn btn-primary"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Griha+Pravesh+Ceremony&dates=20260706T183000Z/20260706T213000Z&details=Griha+Pravesh+Ceremony+hosted+by+Sangeeta+and+Vivek+Talmaley&location=1002-Vrindavan+Gardens%2C+Malviya+Nagar%2C+Khamla%2C+Nagpur"
+       target="_blank" rel="noopener">Add to Calendar</a>
+    <a class="btn btn-secondary"
+       href="https://www.google.com/maps/search/?api=1&query=1002-Vrindavan+Gardens%2C+Malviya+Nagar%2C+Khamla%2C+Nagpur"
+       target="_blank" rel="noopener">Get Directions</a>
+  </div>
+
+  <p class="footnote">We look forward to welcoming you home.</p>
+
+
+  <script>
+    // Auto-play background shenai music after page loads
+    window.addEventListener('load', function() {
+      const audio = document.getElementById('bgAudio');
+      if (audio) {
+        audio.volume = 0.3; // Set volume to 30%
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function(error) {
+            // Auto-play was prevented, allow user interaction to play
+            document.addEventListener('click', function() {
+              audio.play().catch(e => console.log('Audio play failed:', e));
+            }, { once: true });
+          });
+        }
+      }
+    });
+
+    // Load custom fonts after page render for better performance
+    if (document.fonts) {
+      Promise.all([
+        document.fonts.load('400 1em Saroj'),
+        document.fonts.load('700 1em Saroj'),
+        document.fonts.load('400 1em Chintaron'),
+        document.fonts.load('400 1em Theganesha')
+      ]).then(() => {
+        document.documentElement.style.fontFamily = "'EB Garamond', 'Saroj', Georgia, serif";
+      }).catch(e => console.log('Font loading error:', e));
+    }
+  </script>
+
+</body>
+</html>
